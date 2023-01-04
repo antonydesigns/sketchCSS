@@ -1,6 +1,7 @@
 /* STARTER CSS v2.0 */
 
-/* CONTROL CENTER */
+/* CONTROL CENTER
+Where you control the style variables */
 
 :root {
   --border-active: var(--border-0); /* 1 = active, 0 = inactive */
@@ -10,24 +11,36 @@
   --global-font: Arial, Helvetica, sans-serif;
 
   --border-color: black;
+
   --eyecatch-color: rgb(158, 255, 194);
   --lighter-color: rgb(228, 228, 228);
   --darker-color: rgb(47, 47, 47);
   --bg-color: rgb(203, 203, 203);
-  --global-x-padding: 5px;
 
-  --min-col-width: 300px;
+  --global-x-padding: 0px;
+  --global-y-padding: 5px;
+  --global-margin-top: 5px;
 
-  /* Variables */
+  --min-col-width: 350px;
+
+  /* Helper variables */
   --border-1: 1px solid var(--border-color);
   --border-0: none;
 }
+
+/* HELPFUL TIP: 
+
+Once you're happy with the layout and you want to temporarily 
+disable some coloring and shade, use the .x class. This will not
+impact padding, margin, or positioning. 
+
+*/
 
 /* STYLE RESET */
 
 * {
   margin: 0;
-  padding: 5px var(--global-x-padding);
+  padding: var(--global-y-padding) var(--global-x-padding);
   box-sizing: border-box;
   font-family: var(--global-font);
   border: var(--border-active);
@@ -206,11 +219,41 @@ textarea.x {
 
 section,
 .section {
-  margin-top: 5px;
+  margin-top: var(--global-margin-top);
 }
 
 .full-page {
   min-height: 100vh;
+}
+
+.sticky-head {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky-floor {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.sticky-mid {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+}
+
+.rel {
+  position: relative;
+}
+
+.rel-child-mid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .inline {
@@ -311,4 +354,13 @@ section,
 .x {
   box-shadow: none;
   border: none;
+  background-color: hsla(0, 0%, 100%, 0);
+  color: hsl(0, 0%, 0%);
+}
+
+.x.b {
+  box-shadow: none;
+  border: 1px solid black;
+  background-color: hsla(0, 0%, 100%, 0);
+  color: hsl(0, 0%, 0%);
 }
