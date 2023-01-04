@@ -1,0 +1,314 @@
+/* STARTER CSS v2.0 */
+
+/* CONTROL CENTER */
+
+:root {
+  --border-active: var(--border-0); /* 1 = active, 0 = inactive */
+
+  --mobile-gutter: 5vw;
+
+  --global-font: Arial, Helvetica, sans-serif;
+
+  --border-color: black;
+  --eyecatch-color: rgb(158, 255, 194);
+  --lighter-color: rgb(228, 228, 228);
+  --darker-color: rgb(47, 47, 47);
+  --bg-color: rgb(203, 203, 203);
+  --global-x-padding: 5px;
+
+  --min-col-width: 300px;
+
+  /* Variables */
+  --border-1: 1px solid var(--border-color);
+  --border-0: none;
+}
+
+/* STYLE RESET */
+
+* {
+  margin: 0;
+  padding: 5px var(--global-x-padding);
+  box-sizing: border-box;
+  font-family: var(--global-font);
+  border: var(--border-active);
+  color: var(--darker-color);
+}
+
+html,
+body,
+header,
+main,
+section,
+div,
+footer {
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+body.x {
+  background-color: white;
+}
+
+/* LAB MODE 
+Temporary classes to identify elements and boundaries.
+Contents:
+- Override element border
+- Hide elements / make invisible
+- Highlight elements
+*/
+
+/* Border override for each element */
+
+.nb {
+  border: none;
+}
+
+.b {
+  border: 1px solid var(--border-color);
+}
+
+/* Element hiding */
+
+.invis {
+  opacity: 0;
+}
+
+.none {
+  display: none;
+}
+
+/* Element highlighting */
+
+.hl {
+  background-color: var(--eyecatch-color);
+}
+
+/* TYPOGRAPHY 
+Contents:
+- Font sizes including form elements
+- Anchor tags or links
+- Lists
+- labels
+- inputs
+- select & options
+*/
+
+a,
+p,
+li,
+button,
+label,
+input,
+select,
+option {
+  font-size: 1rem;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--darker-color);
+}
+
+a:link.x,
+a:visited.x {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+li.nolist {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* FORMS 
+Contents:
+- button
+- inputs
+- textarea
+*/
+
+button:hover {
+  background-color: var(--darker-color);
+  color: var(--lighter-color);
+}
+
+button:hover.x {
+  background-color: hsla(0, 0%, 100%, 0);
+  color: hsl(0, 0%, 0%);
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  width: 25rem;
+  max-width: 100%;
+}
+
+input,
+button {
+  padding: 5px;
+  margin: 5px 0;
+}
+
+input,
+select,
+textarea {
+  background-color: var(--lighter-color);
+}
+
+input,
+select,
+textarea.x {
+  background-color: var(--lighter-color);
+}
+
+/* COLOR SCHEME */
+
+.lighter {
+  background-color: var(--lighter-color);
+  color: var(--darker-color);
+}
+
+.darker {
+  background-color: var(--darker-color);
+  color: var(--lighter-color);
+}
+
+.eyecatch {
+  background-color: var(--eyecatch-color);
+  color: var(--darker-color);
+}
+
+/* EDGE STYLE */
+
+.rnd {
+  border-radius: 5px;
+}
+
+.shadow {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+}
+
+/* LAYOUTS */
+
+.global-container {
+  margin: 0 var(--mobile-gutter);
+}
+
+section,
+.section {
+  margin-top: 5px;
+}
+
+.full-page {
+  min-height: 100vh;
+}
+
+.inline {
+  display: inline;
+}
+
+.txt-mid {
+  text-align: center;
+}
+
+.mid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mid-gap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.mid.left {
+  justify-content: start;
+}
+
+.mid.right {
+  justify-content: end;
+}
+
+.mid.head {
+  align-items: start;
+}
+
+.mid.foot {
+  align-items: end;
+}
+
+.mid.down {
+  flex-direction: column;
+}
+
+.down-left {
+  flex-direction: column;
+  align-items: start;
+}
+
+.down-right {
+  flex-direction: column;
+  align-items: end;
+}
+
+.down-head {
+  flex-direction: column;
+  justify-content: start;
+}
+
+.down-foot {
+  flex-direction: column;
+  justify-content: end;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), 1fr));
+}
+
+.col-mid {
+  justify-items: center;
+}
+
+/* XL SCREENS */
+
+@media screen and (min-width: 1280px) {
+  .global-container {
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+}
+
+/* SKETCHCSS QUICK PAUSE */
+
+.x {
+  box-shadow: none;
+  border: none;
+}
